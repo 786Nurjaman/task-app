@@ -5,7 +5,7 @@ const formSchema = new Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "users"
+            ref: "user"
         },
         title: {
             type: String,
@@ -36,4 +36,4 @@ const formSchema = new Schema(
     }
 )
 
-module.exports = mongoose.model('task', formSchema)
+module.exports = mongoose.model('task', formSchema, 'task')

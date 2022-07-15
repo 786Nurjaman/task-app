@@ -5,13 +5,13 @@ const queuedSchema = new Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "users"
+            ref: "user"
         },
         task_queued: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: "tasks",
+            ref: "task",
         }]
     }
 )
 
-module.exports = mongoose.model('queued', queuedSchema)
+module.exports = mongoose.model('queued', queuedSchema, 'queued')
