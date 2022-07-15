@@ -2,7 +2,8 @@ const express = require('express');
 const routes = require('./routes/index');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const port = 7001;
+require('dotenv').config()
+const port = process.env.PORT || 7001;
 const app = express();
 
 
@@ -24,10 +25,9 @@ mongoose.connect(`mongodb+srv://admin:87654321@cluster0.fgvpy.mongodb.net/taskdb
 }).then(
     console.log("Database Connected"),
     app.listen(port, () => {
-        console.log("Sever is running...!");
+        console.log(`Sever is running on port: ${port}`);
     })
 ).catch(err =>{
     console.log(err)
 })
-
 //mongodb://localhost:27017/taskdb
