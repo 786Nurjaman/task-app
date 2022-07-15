@@ -18,14 +18,16 @@ app.use((req, res, next) => {
 
 app.use('/', routes)
 
-mongoose.connect('mongodb://localhost:27017/taskdb', {
+mongoose.connect(`mongodb+srv://admin:87654321@cluster0.fgvpy.mongodb.net/taskdb?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(
     console.log("Database Connected"),
     app.listen(port, () => {
-        console.log("Sever is running...!!");
+        console.log("Sever is running...!");
     })
 ).catch(err =>{
     console.log(err)
 })
+
+//mongodb://localhost:27017/taskdb
