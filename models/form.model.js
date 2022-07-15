@@ -5,7 +5,7 @@ const formSchema = new Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "user"
+            ref: "users"
         },
         title: {
             type: String,
